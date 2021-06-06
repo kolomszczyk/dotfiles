@@ -7,8 +7,6 @@
 
 ------
 
-https://cdna.artstation.com/p/assets/images/images/007/170/880/large/vadim-bahryi-9.jpg?1504186700&dl=1
-
 ![Spanchbob](spanchbobGTA.jpg)
 > [spanchbobGTA- source](https://cdna.artstation.com/p/assets/images/images/007/170/880/large/vadim-bahryi-9.jpg?1504186700&dl=1)
 
