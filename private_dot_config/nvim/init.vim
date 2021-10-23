@@ -53,6 +53,10 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'davidhalter/jedi-vim'
 
+
+" vs code like ??? 
+Plug 'neoclide/coc.nvim'
+
 call plug#end()
 
 
