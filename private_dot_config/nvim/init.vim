@@ -55,7 +55,7 @@ Plug 'davidhalter/jedi-vim'
 
 
 " vs code like ??? 
-Plug 'neoclide/coc.nvim'
+" Plug 'neoclide/coc.nvim'
 
 call plug#end()
 
@@ -149,6 +149,7 @@ let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
+" let g:jedi#completions_command = ""
 let g:jedi#rename_command = "<leader>r"
 
 let g:jedi#popup_select_first = 1
