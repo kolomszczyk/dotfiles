@@ -51,11 +51,14 @@ Plug 'preservim/nerdcommenter'
 "A high-performance color highlighter for Neovim which has no external dependencies!
 Plug 'norcalli/nvim-colorizer.lua'
 
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 
 " vs code like ??? 
-" Plug 'neoclide/coc.nvim'
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
 
 call plug#end()
 
@@ -142,14 +145,21 @@ set nowritebackup
 " jedi-vim
 
 
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_stubs_command = "<leader>s"
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-Space>"
+" let g:jedi#goto_command = "<leader>d"
+" let g:jedi#goto_assignments_command = "<leader>g"
+" let g:jedi#goto_stubs_command = "<leader>s"
+" let g:jedi#goto_definitions_command = ""
+" let g:jedi#documentation_command = "K"
+" let g:jedi#usages_command = "<leader>n"
+" let g:jedi#completions_command = "<C-Space>"
 " let g:jedi#completions_command = ""
-let g:jedi#rename_command = "<leader>r"
+" let g:jedi#rename_command = "<leader>r"
+" 
+" let g:jedi#popup_select_first = 1
 
-let g:jedi#popup_select_first = 1
+
+" Reopen the last edited position in files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" syntax for assembly 
+autocmd BufNewFile,BufRead *.asm  set ft=nasm
