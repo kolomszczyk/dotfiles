@@ -8,12 +8,29 @@ set noswapfile
 set scrolloff=7
 set backspace=indent,eol,start
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 set autoindent
 set fileformat=unix
+
+
+
+set hidden
+" set noshowmode
+" set noshowmatch
+" set nolazyredraw
+
+" Turn off backup
+set nobackup
+set noswapfile
+set nowritebackup
+
+set tabstop=4
+set shiftwidth=4
+" set softtabstop=4
+set expandtab
+" set smartindent
+
+
+
 
 let mapleader = ' '
 
@@ -126,21 +143,6 @@ endif
 if has("gui_running")
     set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
 endif
-
-
-
-set number
-set relativenumber
-set hidden
-set mouse=a
-set noshowmode
-set noshowmatch
-set nolazyredraw
-
-" Turn off backup
-set nobackup
-set noswapfile
-set nowritebackup
 
 " jedi-vim
 

@@ -1,3 +1,3 @@
-#!/bin/bash
+#! /bin/bash
 
-(tmux a|| tmux)
+(/bin/tmux a|| /bin/tmux)
