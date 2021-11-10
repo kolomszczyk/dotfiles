@@ -165,3 +165,20 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " syntax for assembly 
 autocmd BufNewFile,BufRead *.asm  set ft=nasm
+
+" tab shift 
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-v> coc#refresh()
+
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
