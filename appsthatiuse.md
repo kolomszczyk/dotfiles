@@ -1,4 +1,0 @@
-- flameshot
-    - flameshot gui
-
-
