@@ -181,4 +181,12 @@ inoremap <silent><expr> <c-v> coc#refresh()
 inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" move from one split window to enother window
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
+" clear highlight on press <ESC>
+" need to find beter way to do it 
+nnoremap <esc> :noh<return><esc> 
