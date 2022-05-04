@@ -1,0 +1,33 @@
+
+" encoding
+set encoding=utf-8
+
+" numbers
+set number
+set relativenumber
+
+" spaces / indentation
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+" mouse
+set mouse=a
+
+" colors
+syntax enable
+"colorscheme slat
+
+" saving files
+set noswapfile
+set nobackup
+set nowritebackup
+set fileformat=unix
+
+
+" dont go to border of terminal
+set scrolloff=7
+
+
+silent! nmap <C-p> :NERDTreeToggle<CR>
+

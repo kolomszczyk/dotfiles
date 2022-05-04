@@ -1,192 +1,31 @@
-" g:python_host_prog = '/usr/bin/python2'
-" g:python3_host_prog = '/usr/bin/python3'
+" inictial/ first config file read by nvim
 
-set encoding=utf-8
-set number relativenumber
-syntax enable
-set noswapfile
-set scrolloff=7
-set backspace=indent,eol,start
+source ~/.config/nvim/user_setting.vim
 
-set autoindent
-set fileformat=unix
+source ~/.config/nvim/coc.vim 
+
+source ~/.config/nvim/plugins.vim
+
+source ~/.config/nvim/vim-plug-config.vim
 
 
 
-set hidden
-" set noshowmode
-" set noshowmatch
-" set nolazyredraw
-
-" Turn off backup
-set nobackup
-set noswapfile
-set nowritebackup
-
-set tabstop=4
-set shiftwidth=4
-" set softtabstop=4
-set expandtab
-" set smartindent
+" c++ syntax highlighting
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
 
 
+" cpp linting
+"
+"let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
+" The following two lines are optional. Configure it to your liking!
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
-let mapleader = ' '
-
-call plug#begin('~/.vim/plugged')
-
-" UI related
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
-
-" Better Visual Guide
-Plug 'Yggdroot/indentLine'
-
-" syntax check
-Plug 'w0rp/ale'
-
-" Autocomplete
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-jedi'
-
-" Formater
-Plug 'Chiel92/vim-autoformat'
-
-" Insert or delete brackets, parens, quotes in pair.
-Plug 'jiangmiao/auto-pairs'
-
-" NERDTree
-Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
-
-"A high-performance color highlighter for Neovim which has no external dependencies!
-Plug 'norcalli/nvim-colorizer.lua'
-
-" Plug 'davidhalter/jedi-vim'
-
-
-" vs code like ??? 
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-
-
-call plug#end()
-
-
+" grubbox colorsheme 
+set background=dark " or light if you want light mode
 colorscheme gruvbox
-
-let g:airline_theme="powerlineish"
-
-" NERDTree
-let NERDTreeQuitOnOpen=1
-let g:NERDTreeMinimalUI=1
-nmap <leader>t :NERDTreeToggle<CR>
-
-" Tabs
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemode=':t'
-nmap <leader>1 :bp<CR>
-nmap <leader>2 :bn<CR>
-nmap <C-w> :bd<CR>
-
-
-" vim-autoformat
-noremap <F3> :Autoformat<CR>
-" NCM2
-" augroup NCM2
-"     autocmd!
-"     " enable ncm2 for all buffers
-"     autocmd BufEnter * call ncm2#enable_for_buffer()
-"     " :help Ncm2PopupOpen for more information
-"     set completeopt=noinsert,menuone,noselect
-"     " When the <Enter> key is pressed while the popup menu is visible, it only
-"     " hides the menu. Use this mapping to close the menu and also start a new line.
-"     inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-"     " uncomment this block if you use vimtex for LaTex
-"     " autocmd Filetype tex call ncm2#register_source({
-"     "           \ 'name': 'vimtex',
-"     "           \ 'priority': 8,
-"     "           \ 'scope': ['tex'],
-"     "           \ 'mark': 'tex',
-"     "           \ 'word_pattern': '\w+',
-"     "           \ 'complete_pattern': g:vimtex#re#ncm2,
-"     "           \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-"     "           \ })
-" augroup END
-
-" Airline
-let g:airline_left_sep  = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#ale#enabled = 1
-let airline#extensions#ale#error_symbol = 'E:'
-let airline#extensions#ale#warning_symbol = 'W:'
-
-
-" UI configuration
-syntax on
-syntax enable
-" colorscheme
-let base16colorspace=256
-colorscheme base16-gruvbox-dark-hard
-set background=dark
-" True Color Support if it's avaiable in terminal
-if has("termguicolors")
-    set termguicolors
-endif
-if has("gui_running")
-    set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
-endif
-
-" jedi-vim
-
-
-" let g:jedi#goto_command = "<leader>d"
-" let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_stubs_command = "<leader>s"
-" let g:jedi#goto_definitions_command = ""
-" let g:jedi#documentation_command = "K"
-" let g:jedi#usages_command = "<leader>n"
-" let g:jedi#completions_command = "<C-Space>"
-" let g:jedi#completions_command = ""
-" let g:jedi#rename_command = "<leader>r"
-" 
-" let g:jedi#popup_select_first = 1
-
-
-" Reopen the last edited position in files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" syntax for assembly 
-autocmd BufNewFile,BufRead *.asm  set ft=nasm
-
-" tab shift 
-" for command mode
-nnoremap <S-Tab> <<
-" for insert mode
-inoremap <S-Tab> <C-d>
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-v> coc#refresh()
-
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" move from one split window to enother window
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-" clear highlight on press <ESC>
-" need to find beter way to do it 
-nnoremap <esc> :noh<return><esc> 
