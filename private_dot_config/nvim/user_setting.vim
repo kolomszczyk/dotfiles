@@ -12,7 +12,7 @@ set shiftwidth=4
 set autoindent
 
 " mouse
-set mouse=a
+set mouse=c
 
 " colors
 syntax enable

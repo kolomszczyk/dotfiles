@@ -52,4 +52,15 @@ Plug 'vim-syntastic/syntastic'
 " color scheme => gruvbox
 Plug 'ellisonleao/gruvbox.nvim'
 
+
+"
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+
+
 call plug#end()
+
+
+
+
+
+

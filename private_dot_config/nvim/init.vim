@@ -4,9 +4,10 @@ source ~/.config/nvim/user_setting.vim
 
 source ~/.config/nvim/coc.vim 
 
+source ~/.config/nvim/vim-plug-config.vim
+
 source ~/.config/nvim/plugins.vim
 
-source ~/.config/nvim/vim-plug-config.vim
 
 
 
