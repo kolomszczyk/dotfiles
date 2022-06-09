@@ -1,1 +1,18 @@
-youtube-dl -x --audio-format mp3 -o "%(title)s.%(ext)s" --no-playlist "@1"        
+#!/bin/bash
+for video in "$@"
+do
+	{ #try
+		# print video name in green
+		echo $'\e[1;32m'downloading $(youtube-dl -e $video) $'\e[0m'
+		youtube-dl -x --audio-format mp3 -o "%(title)s.%(ext)s" --yes-playlist "$video"
+		echo $'\e[1;32m'done$'\e[0m'
+	} || { #catch
+		# print error in red
+		echo $'\e[1;31m'$video
+		echo video can\'t be downloaded
+		echo you did something stupid, please stop$'\e[0m'
+	}
+done
+
+
+
