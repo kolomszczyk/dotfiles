@@ -30,3 +30,14 @@ let g:syntastic_check_on_wq = 0
 " grubbox colorsheme 
 set background=dark " or light if you want light mode
 colorscheme gruvbox
+
+
+" alow to move up/down in line                                             
+" with wrapon mode                                                         
+nmap j gj
+nmap k gk
+nmap j gj
+nmap k gk
+  
+
+set ve=all
