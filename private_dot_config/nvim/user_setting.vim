@@ -1,4 +1,8 @@
 
+set nocompatible
+
+filetype plugin on
+
 " encoding
 set encoding=utf-8
 
