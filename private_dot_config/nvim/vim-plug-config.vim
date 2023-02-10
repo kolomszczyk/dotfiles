@@ -57,6 +57,10 @@ Plug 'ellisonleao/gruvbox.nvim'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 
 
+" closing brakets and skip over them 
+Plug 'm4xshen/autoclose.nvim'
+
+
 call plug#end()
 
 

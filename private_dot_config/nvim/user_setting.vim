@@ -14,7 +14,7 @@ set shiftwidth=4
 set autoindent
 
 " mouse
-set mouse=c
+set mouse=a
 
 " colors
 syntax enable
@@ -28,10 +28,10 @@ set fileformat=unix
 
 
 " dont go to border of terminal
-set scrolloff=7
+set scrolloff=4
 
 
-silent! nmap <C-p> :NERDTreeToggle<CR>
+silent! nmap <C-p>  :NERDTreeToggle<CR>
 
 
 command HIDENUM     :set nonumber | :set norelativenumber

@@ -8,6 +8,9 @@ source ~/.config/nvim/vim-plug-config.vim
 
 source ~/.config/nvim/plugins.vim
 
+" source ~/.config/nvim/autoclose.lua
+lua require('config-autoclose')
+
 
 
 

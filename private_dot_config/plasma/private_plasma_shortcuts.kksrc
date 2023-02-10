@@ -1,0 +1,5 @@
+[org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
+_launch=Ctrl+Shift+Esc
+
+[yakuake][Global Shortcuts]
+toggle-window-state=F12; Ctrl+Alt+B
