@@ -8,8 +8,10 @@ source ~/.config/nvim/vim-plug-config.vim
 
 source ~/.config/nvim/plugins.vim
 
-" source ~/.config/nvim/autoclose.lua
+" hack to get ~/.config/nvim/config-autoclose.lua to load 
+lua package.path = os.getenv("HOME") .. "/.config/nvim/?.lua;" 
 lua require('config-autoclose')
+
 
 
 
